@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Conexión Segura - WhatsApp Autorizado</title>
-  <meta name="description" content="Plataforma verificada. Conectate por WhatsApp y obtené tu bono exclusivo.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conexión WhatsApp - Plataforma Segura</title>
+  <meta name="description" content="Conectate por WhatsApp para obtener tu bono exclusivo. Plataforma segura y verificada.">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -21,7 +21,7 @@
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2474539706266564&ev=PageView&noscript=1"/>
+    src="https://www.facebook.com/tr?id=2474539706266564&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
 
@@ -33,8 +33,8 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-image: url('https://i.imgur.com/JOblzqM.jpeg'); /* Cambiá esto si tenés otra imagen */
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://i.ibb.co/vcLWgCy/joker-fondo.jpg'); /* Imagen funcional estilo tragamonedas */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -47,21 +47,24 @@
     .overlay {
       background-color: rgba(0, 0, 0, 0.75);
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 0;
     }
 
     #loader, #content {
       position: relative;
       z-index: 1;
-      color: white;
       text-align: center;
+      color: white;
+      padding: 20px;
     }
 
     #loader h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 22px;
+      margin-bottom: 8px;
     }
 
     #content {
@@ -69,19 +72,19 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      max-width: 400px;
+      max-width: 360px;
     }
 
     .chat-box {
-      background-color: rgba(255,255,255,0.1);
-      backdrop-filter: blur(8px);
-      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
       padding: 15px;
       width: 100%;
-      max-height: 350px;
+      max-height: 300px;
       overflow-y: auto;
-      color: #fff;
       margin-bottom: 20px;
+      font-size: 14px;
     }
 
     .message {
@@ -89,29 +92,40 @@
       padding: 10px;
       margin: 6px 0;
       border-radius: 8px;
-      animation: slideIn 0.3s ease-in-out;
-      max-width: 85%;
-      margin-left: auto;
-      margin-right: auto;
+      animation: fadeIn 0.3s ease-in-out;
     }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(10px); }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     .wa-button {
       background-color: #25d366;
       color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 40px;
       font-size: 16px;
       font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
     }
 
     .wa-button:hover {
       background-color: #1ebe5d;
+    }
+
+    @media screen and (max-width: 480px) {
+      .chat-box {
+        font-size: 13px;
+        max-height: 250px;
+      }
+
+      .wa-button {
+        font-size: 15px;
+        padding: 12px 20px;
+      }
     }
   </style>
 </head>
@@ -121,32 +135,32 @@
 
   <div id="loader">
     <h2>Conectando con WhatsApp autorizado...</h2>
-    <p>Por favor espere un momento.</p>
+    <p>Un momento por favor...</p>
   </div>
 
   <div id="content">
-    <div class="chat-box" id="chatBox">
-      <!-- Mensajes simulados -->
-    </div>
+    <div class="chat-box" id="chatBox"></div>
     <a href="https://api.whatsapp.com/send?phone=5493471317100&text=Hola!%20Quiero%20mi%20bono%20de%20bienvenida"
        class="wa-button" id="waBtn" target="_blank">
-      Chatear ahora por WhatsApp
+       Chatear por WhatsApp
     </a>
   </div>
 
   <script>
+    // Mostrar contenido tras 2 segundos
     setTimeout(() => {
       document.getElementById('loader').style.display = 'none';
       document.getElementById('content').style.display = 'flex';
     }, 2000);
 
+    // Mensajes simulados
     const mensajes = [
-      "✅ Pablo M. ganó $15.600 en tragamonedas 🎰",
-      "🎉 Mariana activó su bono del 30% instantáneo",
-      "💰 Carlos retiró $22.300 en 24 hs",
-      "🔒 Sitio seguro y atención inmediata",
-      "🔥 ¡Ganancias reales y soporte 24/7!",
-      "🎲 Jugador nuevo duplicó su primer depósito",
+      "✅ Juan ganó $15.000 en tragamonedas",
+      "🎉 Sofía activó su bono del 30%",
+      "💵 Lucas retiró $22.300 ayer",
+      "📢 Atención rápida y sin vueltas",
+      "🔥 ¡Juego justo y pagos reales!",
+      "🎲 Camila duplicó su primer depósito",
     ];
 
     const chatBox = document.getElementById("chatBox");
@@ -161,6 +175,7 @@
       msgIndex++;
     }, 3000);
 
+    // Evento de conversión personalizada
     document.getElementById("waBtn").addEventListener("click", function () {
       fbq('trackCustom', 'ClickWhatsApp');
     });
